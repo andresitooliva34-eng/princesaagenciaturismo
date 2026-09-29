@@ -3,6 +3,21 @@ const mainNav = document.querySelector(".main-nav");
 const filterButtons = document.querySelectorAll(".filter-button");
 const destinationCards = document.querySelectorAll(".destination-card");
 const yearElement = document.querySelector("#current-year");
+const whatsappConfig = {
+	phone: "5493545556857",
+	message: "Hola, Carmesi Viajes. Quisiera consultar por un viaje.",
+};
+
+document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+	const destination = link.dataset.whatsappDestination;
+	const message = destination
+		? `${whatsappConfig.message} Me interesa consultar por ${destination}.`
+		: whatsappConfig.message;
+	const query = new URLSearchParams({ text: message });
+	link.href = `https://wa.me/${whatsappConfig.phone}?${query.toString()}`;
+	link.target = "_blank";
+	link.rel = "noopener noreferrer";
+});
 
 menuToggle.addEventListener("click", () => {
 	const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
