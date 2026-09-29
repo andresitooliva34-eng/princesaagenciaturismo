@@ -53,26 +53,26 @@ button { color: inherit; font: inherit; }
 .main-nav { display: flex; align-items: center; gap: 26px; color: var(--green-dark); font-family: "Oswald", sans-serif; font-size: 15px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 .main-nav > a:not(.nav-cta), .footer-nav a { transition: color .2s ease; }
 .main-nav > a:not(.nav-cta):hover, .footer-nav a:hover { color: var(--orange); }
-.nav-cta { display: inline-flex; align-items: center; gap: 16px; padding: 12px 17px; border: 1px solid var(--green-dark); border-radius: 3px; color: var(--green-dark); transition: background .2s ease, color .2s ease; }
-.nav-cta:hover { background: var(--green-dark); color: var(--white); }
+.nav-cta { display: inline-flex; align-items: center; gap: 16px; padding: 12px 17px; border: 0; border-radius: 4px; background: var(--green); color: var(--white); transition: all .3s ease-in-out; }
+.nav-cta:hover { transform: scale(1.03); background: var(--green-dark); color: var(--white); }
 .menu-toggle { display: none; }
 
 .hero { position: relative; display: flex; min-height: 620px; align-items: center; overflow: hidden; background: #382426; color: var(--white); }
 .hero-image, .hero-video, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-image { z-index: 0; object-fit: cover; object-position: center 54%; }
 .hero-video { z-index: 1; object-fit: cover; object-position: center 54%; }
-.hero-shade { z-index: 2; background: linear-gradient(90deg, rgba(35, 14, 17, .78) 0%, rgba(35, 14, 17, .48) 48%, rgba(35, 14, 17, .08) 100%), linear-gradient(0deg, rgba(35, 14, 17, .34), transparent 32%); }
+.hero-shade { z-index: 2; background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .7)); }
 .hero-content { position: relative; z-index: 3; width: min(1160px, calc(100% - 96px)); margin: 0 auto; padding: 88px 0 112px; animation: rise-in .7s ease both; }
 .eyebrow { margin: 0 0 19px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-.hero-eyebrow { display: flex; align-items: center; gap: 10px; color: var(--white); }
+.hero-eyebrow { display: flex; align-items: center; gap: 10px; color: var(--white); text-shadow: 0 2px 3px rgba(0, 0, 0, .5); }
 .hero-eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
 .hero h1 { max-width: 760px; margin-bottom: 1.25rem; color: #fff; font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.08; }
 h1 em, h2 em { color: var(--lime); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
-.hero-copy { max-width: 31rem; margin-bottom: 1.875rem; color: rgba(255,255,255,.88); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65; }
-.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 24px; padding: 0 19px; border: 1px solid transparent; border-radius: 3px; font-size: 13px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
-.button:hover { transform: translateY(-2px); }
+.hero-copy { max-width: 31rem; margin-bottom: 1.875rem; color: rgba(255,255,255,.88); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65; text-shadow: 0 2px 3px rgba(0, 0, 0, .5); }
+.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 24px; padding: 0 19px; border: 1px solid transparent; border-radius: 3px; font-size: 13px; font-weight: 700; transition: all .3s ease-in-out; }
+.button:hover { transform: translateY(-2px) scale(1.03); }
 .button-light { background: var(--lime); color: var(--ink); }
 .button-light:hover { background: #e4f2bc; }
 .button-dark { background: var(--green); color: var(--white); }
@@ -200,7 +200,6 @@ h1 em, h2 em { color: var(--lime); font-family: Georgia, "Times New Roman", seri
     .nav-cta { justify-content: space-between; margin-top: 13px; }
     .hero { min-height: 610px; align-items: flex-end; }
     .hero-image { object-position: 57% center; }
-    .hero-shade { background: linear-gradient(0deg, rgba(35, 14, 17, .84) 0%, rgba(35, 14, 17, .48) 57%, rgba(35, 14, 17, .16) 100%); }
     .hero-content { padding: 0 0 135px; }
     .hero-actions { align-items: flex-start; }
     .hero-actions .button { gap: 12px; padding-inline: 14px; font-size: 12px; }
